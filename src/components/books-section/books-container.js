@@ -2,15 +2,17 @@ import React from 'react'
 import Book from './book';
 
 const BooksContainer = (props) => {
-  let books = [1,2,3,4,5]
+  let books = [1,2]
 
-  
+
   return (
     <div className='books-container'>
-    <Book />
-    <Book />
-    <Book />
-  </div>
+    {books.map((item, index) => {
+      return (
+        <Book key={index} />
+      )
+    })}
+   </div>
   )
 }
 
