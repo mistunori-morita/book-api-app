@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import BooksSection from './pages/books-section';
 import BookDetail from './pages/book-detail';
 import PageNotFound from './pages/page-not-found';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -10,8 +10,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={BooksSection}/>
-          <Route path="/book/category/:categoryName" exact component={BooksSection}/>
-          <Route path="/books/:bookId" component={BookDetail}/>
+          <Route path="/books/category/:categoryName" exact component={BooksSection}/>
+          <Route path="/book/:bookId" component={BookDetail}/>
           <Route component={PageNotFound}/>
         </Switch>
       </BrowserRouter>
