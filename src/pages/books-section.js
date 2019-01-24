@@ -14,17 +14,16 @@ class BooksSectionPage extends Component{
 
 
   render(){
-    if(this.state.isLoading){
-      return <p>Loading ....</p>
-    }else{
-      return (
-        <div className="has-fixed-footer">
-          <Header />
-            <BooksSection title={this.props.categoryName} books={this.state.books}/>
-          <Footer />
-        </div>
-      )
-    }
+    return (
+      <div className="has-fixed-footer">
+        <Header />
+        {this.state.isLoading ?
+          <p>is Loading.....</p> :
+          <BooksSection title={this.props.categoryName} books={this.state.books}/>
+        }
+        <Footer />
+      </div>
+    )
   }
 }
 
