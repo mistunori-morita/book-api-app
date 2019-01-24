@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import BooksSectionPage from './pages/books-section';
-import BookDetail from './pages/book-detail';
+import BookDetailPage from './pages/book-detail';
 import PageNotFound from './pages/page-not-found';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
           <Route path="/books/category/:categoryName" exact render={(props) => {
             return <BooksSectionPage categoryName={props.match.params.categoryName} />}
             }/>
-          <Route path="/book/:bookId" component={BookDetail}/>
+          <Route path="/book/:bookId" component={BookDetailPage}/>
           <Route component={PageNotFound}/>
         </Switch>
       </BrowserRouter>
