@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 import BooksSection from '../components/books-section/books-section'
-
+import axios from 'axios'
 class BooksSectionPage extends Component{
   constructor(props){
     super(props)
@@ -10,6 +10,17 @@ class BooksSectionPage extends Component{
       books: [],
       isLoading: true
     }
+  }
+
+  componentDidMount(){
+    axios
+      .get("")
+      .then(response =>{
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
 
