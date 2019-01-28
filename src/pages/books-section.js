@@ -14,9 +14,13 @@ class BooksSectionPage extends Component{
 
   componentDidMount(){
     axios
-      .get("")
+      .get("https://www.googleapis.com/books/v1/volumes?q=quilting")
       .then(response =>{
-        console.log(response)
+        console.log(response, 222)
+        this.setState({
+          books: response.data.items,
+          isLoading: false
+        })
       })
       .catch(error => {
         console.log(error)
