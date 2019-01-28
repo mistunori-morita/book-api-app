@@ -14,7 +14,7 @@ class BooksSectionPage extends Component{
 
   componentDidMount(){
     axios
-      .get("https://www.googleapis.com/books/v1/volumes?q=quilting")
+      .get("https://www.googleapis.com/books/v1/volumes?q=" + this.props.categoryName)
       .then(response =>{
         console.log(response, 222)
         this.setState({
@@ -27,6 +27,28 @@ class BooksSectionPage extends Component{
       })
   }
 
+  componentDidUpdate(previousProps){
+    if(previousProps.categoryName !== this.props.categoryName){
+      console.log('change');
+      this.setState({
+        isLoading:true
+      })
+
+      axios
+      .get("https://www.googleapis.com/books/v1/volumes?q=" + this.props.categoryName)
+      .then(response =>{
+        console.log(response, 222)
+        this.setState({
+          books: response.data.items,
+          isLoading: false
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+    }
+  }
 
   render(){
     return (
