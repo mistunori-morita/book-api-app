@@ -115,6 +115,10 @@ body {
   grid-gap: 20px;
 }
 
+#book-detail .book-img img{
+  max-width: 100%;
+}
+
 #book-detail .book-title{
   padding-bottom: 10px;
 }

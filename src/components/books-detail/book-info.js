@@ -1,18 +1,16 @@
 import React from 'react'
 
-const BookInfo = () => {
+const BookInfo = (props) => {
   return (
     <div className='book-info'>
     <div className='book-title'>
-      <h1>Book title</h1>
+      <h1>{props.title}</h1>
     </div>
     <div className='book-author'>
-      <h3>Book Author</h3>
+      <h3>{props.author}</h3>
     </div>
     <div className='book-description'>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae harum perspiciatis tenetur, ex odit
-        quod placeat, ab saepe quasi nulla quia, magni pariatur quibusdam provident quisquam laboriosam fuga nisi
-        a.</p>
+      <p>{props.description}</p>
     </div>
   </div>
   )
